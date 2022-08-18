@@ -37,10 +37,8 @@ func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
     })
 
     if err != nil {
-        log.Fatalf("Got error calling UpdateItem: %s", &err)
+        log.Fatalf("Got error calling UpdateItem: %s", err)
     }
-
-	
 
 //	return attributeMap, err
 
