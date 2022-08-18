@@ -1,0 +1,24 @@
+name: Go
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  test-infra:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: ${{ env.GO_VERSION }}
+
+    - name: test get-function
+      run: cd cloud-resume-challenge/get-function && go test -v ./ && cd ../../
+
+    - name: test put-function
+      run: cd cloud-resume-challenge/put-function && go test -v ./ && cd ../../
