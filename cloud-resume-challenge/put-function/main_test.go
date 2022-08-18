@@ -11,7 +11,7 @@ import (
 
 func TestHandler(t *testing.T) {
 	t.Run("Unable to get IP", func(t *testing.T) {
-		DefaultHTTPGetAddress = "https://c26o248ep2.execute-api.us-east-1.amazonaws.com/Prod/put"
+		DefaultHTTPGetAddress = "http://127.0.0.1:12345"
 
 		_, err := handler(events.APIGatewayProxyRequest{})
 		if err == nil {
