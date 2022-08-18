@@ -37,5 +37,5 @@ jobs:
           aws-region: us-east-1
       - run: sam build
         working-directory: cloud-resume-challenge
-      - run: sam build --no-confirm-changeset --no-fail-on-empty-changeset
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
         working-directory: cloud-resume-challenge
